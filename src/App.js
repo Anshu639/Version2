@@ -31,6 +31,8 @@ function App() {
         <Route path="/whyus" element={<WhyUs />} />
         <Route path="/events" element={<Events />} />
         <Route path="/ourVision" element={<OurVision />} />
+        {/* Catch-all route for unmatched paths */}
+        <Route path="*" element={<HomePage />} />
       </Routes>
 
       {/* 3) Render the global Footer at the bottom */}
