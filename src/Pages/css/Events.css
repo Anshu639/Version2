@@ -72,7 +72,7 @@
 }
 
 /* Button */
-button {
+.event-button {
   margin-top: 40px;
   padding: 14px 30px;
   background-color: black;
@@ -83,7 +83,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.event-button:hover {
   background-color: #444;
 }
 
@@ -96,7 +96,6 @@ button:hover {
 .btn-link:hover {
   color: pink;
 }
-
 /* Mobile Responsive */
 @media (max-width: 900px) {
   .section {

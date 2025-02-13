@@ -8,11 +8,24 @@ import competitionsImg from "../Images/training.jpg";
 const Events = () => {
   const location = useLocation();
 
+  // useEffect(() => {
+  //   if (location.hash) {
+  //     const element = document.getElementById(location.hash.substring(1));
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: "smooth", block: "start" });
+  //     }
+  //   }
+  // }, [location]);
   useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        setTimeout(() => {
+          window.scrollTo({
+            top: element.offsetTop - 100, // Adjust offset to make it properly visible
+            behavior: "smooth",
+          });
+        }, 100);
       }
     }
   }, [location]);
@@ -37,7 +50,7 @@ const Events = () => {
             professional, or enthusiast, our structured modules help you master
             new concepts, validate expertise, and gain a competitive edge.
           </p>
-          <button>
+          <button className="event-button">
             <Link to="/price" className="btn-link">
               Brochure
             </Link>
@@ -57,7 +70,7 @@ const Events = () => {
             limits. These events cultivate a spirit of healthy competition while
             fostering teamwork, strategic thinking, and personal growth.
           </p>
-          <button>
+          <button className="event-button">
             <Link to="/price" className="btn-link">
               Brochure
             </Link>
@@ -85,7 +98,7 @@ const Events = () => {
             networking opportunities, and hands-on experiences in a dynamic
             environment.
           </p>
-          <button>
+          <button className="event-button">
             <Link to="/price" className="btn-link">
               Brochure
             </Link>
@@ -105,7 +118,7 @@ const Events = () => {
             subjects—from AI and robotics to arts, leadership, and wellness—each
             session is designed to spark innovation and personal growth.
           </p>
-          <button>
+          <button className="event-button">
             <Link to="/price" className="btn-link">
               Brochure
             </Link>
@@ -131,7 +144,7 @@ const Events = () => {
             discoveries, we contribute to a growing community of
             knowledge-seekers and innovators.
           </p>
-          <button>
+          <button className="event-button">
             <Link to="/price" className="btn-link">
               Brochure
             </Link>
@@ -152,7 +165,7 @@ const Events = () => {
             entrepreneurship, or the arts, these camps provide a transformative
             experience beyond classrooms.
           </p>
-          <button>
+          <button className="event-button">
             <Link to="/price" className="btn-link">
               Brochure
             </Link>
@@ -178,7 +191,7 @@ const Events = () => {
             platforms foster innovation, encourage meaningful discussions, and
             build long-lasting professional relationships.
           </p>
-          <button>
+          <button className="event-button">
             <Link to="/price" className="btn-link">
               Brochure
             </Link>
@@ -201,7 +214,7 @@ const Events = () => {
             individuals with knowledge and awareness that lead to impactful
             change.
           </p>
-          <button>
+          <button className="event-button">
             <Link to="/price" className="btn-link">
               Brochure
             </Link>
@@ -226,7 +239,7 @@ const Events = () => {
             programs, or specialized educational initiatives, we create
             impactful and seamless experiences.
           </p>
-          <button>
+          <button className="event-button">
             <Link to="/price" className="btn-link">
               Brochure
             </Link>

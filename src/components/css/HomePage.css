@@ -40,7 +40,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 50px;
+  margin-top: 30px;
   padding: 10px;
   max-width: 400px;
   border-radius: 50px; /* Rounded edges */
@@ -50,6 +50,8 @@
 
 /* Search Input Wrapper */
 .search-input-wrapper {
+  position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-grow: 1;
@@ -58,6 +60,30 @@
   border-radius: 50px;
 }
 
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.suggestions li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background: #f0f0f0;
+}
 .search-icon {
   font-size: 1.2rem;
   color: #2d4b6c; /* Dark blue icon color */
@@ -80,15 +106,18 @@
   font-size: 1rem;
   font-weight: bold;
   color: #fff;
-  background-color: #5a2675; /* Dark purple background */
+  background-color: #5a2675;
   border: none;
   border-radius: 50px; /* Rounded edges */
   cursor: pointer;
-  transition: background-color 0.3s;
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s ease-in-out;
 }
 
 .search-button:hover {
-  background-color: #471d5a; /* Slightly darker purple on hover */
+  background-color: rgba(0, 0, 0, 0.534); /* Slightly darker purple on hover */
+  transform: scale(1.1); /* Increases button size */
+  font-size: 1.1rem; /* Increases font size */
 }
 
 /* Features Section */

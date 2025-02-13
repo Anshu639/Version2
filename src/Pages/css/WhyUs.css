@@ -1,6 +1,7 @@
 /* Container for the whole 'Why Us' section */
 .why-us {
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
+  background-color: #fdf8ee;
   padding: 70px 20px;
   font-family: Arial, sans-serif;
   color: #222;

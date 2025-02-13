@@ -1,6 +1,7 @@
 /* Container for the whole 'About Us' section */
 .about-us {
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; white color css background */
+  background-color: #fdf8ee;
   padding: 60px 20px; /* Adjust spacing as you like */
   font-family: Arial, sans-serif;
   color: #333;
@@ -35,7 +36,7 @@
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 15px;
-  color: #555;
+  color: black;
   text-align: justify;
 }
 

@@ -1,12 +1,10 @@
-/* General Styles */
 .tracks {
-  padding: 40px 20px;
+  padding: 40px 50px;
   text-align: center;
   background-color: #fdfdfd;
 }
 
 .tracks-header {
-  position: relative;
   margin-bottom: 30px;
 }
 
@@ -22,39 +20,14 @@
   margin-bottom: 30px;
 }
 
-.header-decor {
-  position: absolute;
-  top: -40px;
-  left: 20px;
-}
-
-.bulb-icon {
-  width: 50px;
-  height: auto;
-}
-
-.arrow-decor {
-  position: absolute;
-  top: -20px;
-  right: 20px;
-}
-
-.arrow-icon {
+/* Slick Slider */
+.course-slider {
   position: relative;
-  width: 100px;
-  height: auto;
+  margin: 0 auto;
+  width: 90%;
 }
 
-/* Course Cards Container */
-.course-cards {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-/* Individual Course Card */
-.course-card {
+.event-card {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -62,164 +35,122 @@
   text-align: left;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 20px;
+  margin: 0 auto;
 }
 
-.course-card:hover {
+.event-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Course Image */
-.course-image {
+.event-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-/* Course Content */
-.course-content {
-  padding: 20px;
+.event-content {
+  padding: 10px;
 }
 
-.course-category {
-  font-size: 0.9rem;
-  color: orange;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.course-content h3 {
+.event-content h3 {
   font-size: 1.2rem;
   color: #333;
-  margin-bottom: 0px;
-  margin-top: 5px;
+  margin-bottom: 8px;
 }
 
-/* Rating (Stars) */
-.course-rating {
+.event-meta {
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   margin-bottom: 10px;
 }
 
-.star {
-  color: #ddd;
-  font-size: 1.2rem;
-}
-
-.star.filled {
+.meta-icon {
+  margin-right: 5px;
   color: orange;
 }
 
-/* Course Metadata (Icons and Info) */
-.course-meta {
-  font-size: 12px;
-  color: #777;
+.event-date-time {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #444;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.course-meta span {
+.event-status {
   display: flex;
   align-items: center;
-  gap: 5px; /* Spacing between icon and text */
-}
-
-.meta-icon {
-  color: #777; /* Icon color */
-  font-size: 12px; /* Icon size */
-}
-
-.course-meta span:hover .meta-icon {
-  color: orange; /* Highlight icon on hover */
-}
-
-.course-meta span:hover {
-  color: orange; /* Highlight text on hover */
-}
-
-/* Course Footer (Price and Button) */
-.course-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.course-price {
   font-size: 1rem;
   font-weight: bold;
-  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.join-button {
-  background-color: #ff7426;
-  color: #fff;
+.status-icon {
+  margin-right: 5px;
+}
+
+.event-status.upcoming {
+  background-color: lightblue;
+  color: blue;
+}
+
+.event-status.registration-open {
+  background-color: lightgreen;
+  color: green;
+}
+
+.event-status.registration-close {
+  background-color: lightcoral;
+  color: red;
+}
+
+.read-more {
+  background-color: orange;
+  color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 50px;
+  padding: 8px 12px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
 }
 
-.join-button:hover {
-  background-color: #ff7a00;
+.read-more:hover {
+  background-color: darkorange;
 }
 
-/* Media Queries */
-
-/* Tablets (Portrait and Landscape) - Typically 768px to 1024px */
-@media (max-width: 1024px) {
-  .tracks {
-    padding: 30px 15px; /* Reduced padding for tablets */
-  }
-
-  .header-decor, .arrow-decor {
-    display: none; /* Hide decorative elements on smaller screens */
-  }
-
-  .course-cards {
-    gap: 20px;
-  }
-
-  .course-card {
-    max-width: 45%; /* Adjust card width for better fitting in tablets */
-  }
-
-  .course-content {
-    padding: 15px;
-  }
-
-  .join-button {
-    padding: 6px 12px; /* Adjust button padding for smaller screens */
-  }
+/* Slick Slider Navigation Arrows */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: orange;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Mobile Phones (Portrait and Landscape) - Typically up to 767px */
-@media (max-width: 767px) {
-  .tracks {
-    padding: 20px 20px; /* Further reduced padding for mobiles */
-  }
+.prev-arrow {
+  left: -60px; /* Moves the left arrow outside the track */
+}
 
-  .course-cards {
-    flex-direction: column;
-    align-items: center;
-  }
+.next-arrow {
+  right: -60px; /* Moves the right arrow outside the track */
+}
 
-  .course-card {
-    max-width: 100%; /* Full width for mobile screens */
-    margin-bottom: 20px; /* Add some space between cards */
-  }
-
-  .course-content h3 {
-    font-size: 1rem; /* Adjust font size for smaller screens */
-  }
-
-  .course-category, .course-meta span {
-    font-size: 0.8rem; /* Reduce font size for metadata and categories */
-  }
-
-  .meta-icon, .star {
-    font-size: 1rem; /* Adjust icon size to be slightly smaller on mobile */
-  }
+.slider-arrow:hover {
+  background: darkorange; /* Slightly darker on hover */
 }

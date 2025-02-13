@@ -4,50 +4,82 @@ import "./css/Footer.css";
 const Footer = () => {
   return (
     <footer className="footer">
-      
-
-        {/* Footer Links */}
+      {/* Footer Links */}
       <div className="footer-links">
         <div className="footer-column">
-          <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Site Logo" className="footer-logo" />
-          {/* <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry’s standard dummy a type
-            specimen book.
-          </p> */}
+          <a href="/">
+            <img
+              src={`${process.env.PUBLIC_URL}/images/logo.png`}
+              alt="Site Logo"
+              className="footer-logo"
+            />
+          </a>
         </div>
         <div className="footer-column">
           <h3>Company</h3>
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">How to work?</a></li>
-            <li><a href="#">Popular Course</a></li>
-            <li><a href="#">Service</a></li>
+            <li>
+              <a href="/about">About Us</a>
+            </li>
+            <li>
+              <a href="/Ourvision">Our Vision</a>
+            </li>
+            <li>
+              <a href="/whyus">Why Us</a>
+            </li>
+            <li>
+              <a href="/clients">Our Clients</a>
+            </li>
           </ul>
         </div>
         <div className="footer-column">
-          <h3>Courses</h3>
+          <h3>Services</h3>
           <ul>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Offline Course</a></li>
-            <li><a href="#">Video Course</a></li>
+            <li>
+              <a href="/events">Events</a>
+            </li>
+            <li>
+              <a href="/newsletter">Newsletter</a>
+            </li>
+            <li>
+              <a href="/blogs">Blogs</a>
+            </li>
           </ul>
         </div>
         <div className="footer-column">
           <h3>Support</h3>
           <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Privacy</a></li>
+            <li>
+              <a href="/faq">FAQ</a>
+            </li>
+            <li>
+              <a href="/contactUs">Work with Us?</a>
+            </li>
+            <li>
+              <a href="/brochure">Brochure</a>
+            </li>
           </ul>
         </div>
         <div className="footer-column">
           <h3>Contact Info</h3>
           <ul>
-            <li>+0913-705-3875</li>
-            <li>Elizabeth.J@jourrapide.com</li>
-            <li>4808 Skinner Hollow Road, Days Creek, OR 97429</li>
+            <li>
+              <a href="tel:+916396268840">+91 6396268840</a>
+            </li>
+            <li>
+              <a href="mailto:philomathnetworks@gmail.com">
+                philomathnetworks@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://maps.google.com/?q=One+Step+Ahead,+Clock+Tower,+Dehradun"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                One Step Ahead, Clock Tower, Dehradun
+              </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -49,10 +49,10 @@ const useResponsiveCards = () => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    handleResize();  // Set initial value
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Set initial value
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return cardsToShow;
@@ -66,7 +66,7 @@ const TestimonialsSlider = () => {
     onSwipedLeft: () => handleNext(),
     onSwipedRight: () => handlePrev(),
     preventScrollOnSwipe: true,
-    trackMouse: true
+    trackMouse: true,
   });
 
   const handleNext = () => {
@@ -88,7 +88,7 @@ const TestimonialsSlider = () => {
   return (
     <section className="testimonials-slider" {...swipeHandlers}>
       <div className="testimonials-header">
-        <h2>What Student's Say</h2>
+        <h2>What Client's Say</h2>
         <p>Lorem Ipsum is simply dummy text of the printing.</p>
       </div>
 

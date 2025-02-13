@@ -1,10 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./css/HomePage.css";
 import Tracks from "./Tracks";
 import TestimonialsSlider from "./TestimonialsSlider";
 import TeamSection from "./TeamSection";
 
+const eventList = [
+  { id: "training", name: "Hands-On Training & Certification Courses" },
+  { id: "competitions", name: "Academic & Non-Academic Competitions" },
+  { id: "tech-fairs", name: "Themed Events & Tech Fairs" },
+  { id: "workshops", name: "Workshops & Expert-Led Sessions" },
+  { id: "publishing", name: "Books & Newsletters Publishing" },
+  { id: "camps", name: "Summer & Winter Camps" },
+  { id: "community", name: "Community Engagement & Networking Initiatives" },
+  { id: "awareness", name: "Awareness Programs" },
+  { id: "custom-events", name: "Custom Events & Corporate Collaborations" },
+];
+
 const HomePage = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredEvents, setFilteredEvents] = useState([]);
+  const navigate = useNavigate();
+
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+
+    if (value.length > 0) {
+      const filtered = eventList.filter((event) =>
+        event.name.toLowerCase().includes(value.toLowerCase())
+      );
+      setFilteredEvents(filtered);
+    } else {
+      setFilteredEvents([]);
+    }
+  };
+
+  const handleSelectEvent = (event) => {
+    setSearchTerm(event.name);
+    setFilteredEvents([]);
+    navigate(`/events#${event.id}`);
+  };
   return (
     <div>
       {/* Hero Section */}
@@ -29,9 +65,20 @@ const HomePage = () => {
               <span className="search-icon">🔍</span>
               <input
                 type="text"
-                placeholder="Search for a location..."
+                placeholder="Search for an event..."
                 className="search-input"
+                value={searchTerm}
+                onChange={handleSearchChange}
               />
+              {filteredEvents.length > 0 && (
+                <ul className="suggestions">
+                  {filteredEvents.map((event) => (
+                    <li key={event.id} onClick={() => handleSelectEvent(event)}>
+                      {event.name}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
             <button className="search-button">Continue</button>
           </div>
