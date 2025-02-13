@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./css/Events.css"; // Import the CSS file
+import "./css/Events.css";
 import trainingImg from "../Images/training.jpg";
 import competitionsImg from "../Images/training.jpg";
 
 const Events = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="container">
-      <h1 className="mainHeading">Our Events</h1>
+      <h1 className="mainHeading">What We Do</h1>
 
-      {/* Section 1: Image Left, Text Right */}
-      <div className="section">
+      {/* Section 1 */}
+      <div className="section" id="training">
         <div className="image-container">
           <img src={trainingImg} alt="Training Event" />
         </div>
@@ -27,16 +39,16 @@ const Events = () => {
           </p>
           <button>
             <Link to="/price" className="btn-link">
-              View Price
+              Brochure
             </Link>
           </button>
         </div>
       </div>
 
-      {/* Section 2: Text Left, Image Right */}
-      <div className="section reverse">
+      {/* Section 2 */}
+      <div className="section reverse" id="competitions">
         <div className="content-container">
-          <h2>Competitions (Academic & Non-Academic)</h2>
+          <h2>Academic & Non-Academic Competitions</h2>
           <p>
             Step into the arena of knowledge, creativity, and problem-solving
             with our academic and non-academic competitions. From STEM Olympiads
@@ -47,7 +59,7 @@ const Events = () => {
           </p>
           <button>
             <Link to="/price" className="btn-link">
-              View Price
+              Brochure
             </Link>
           </button>
         </div>
@@ -56,8 +68,8 @@ const Events = () => {
         </div>
       </div>
 
-      {/* Section 3: Image Left, Text Right */}
-      <div className="section">
+      {/* Section 3 */}
+      <div className="section" id="tech-fairs">
         <div className="image-container">
           <img src={trainingImg} alt="Tech Fairs Event" />
         </div>
@@ -75,14 +87,14 @@ const Events = () => {
           </p>
           <button>
             <Link to="/price" className="btn-link">
-              View Price
+              Brochure
             </Link>
           </button>
         </div>
       </div>
 
-      {/* Section 4: Text Left, Image Right */}
-      <div className="section reverse">
+      {/* Section 4 */}
+      <div className="section reverse" id="workshops">
         <div className="content-container">
           <h2>Workshops & Expert-Led Sessions</h2>
           <p>
@@ -95,7 +107,7 @@ const Events = () => {
           </p>
           <button>
             <Link to="/price" className="btn-link">
-              View Price
+              Brochure
             </Link>
           </button>
         </div>
@@ -104,31 +116,31 @@ const Events = () => {
         </div>
       </div>
 
-      {/* Section 5: Image Left, Text Right */}
-      <div className="section">
+      {/* Section 5 */}
+      <div className="section" id="publishing">
         <div className="image-container">
-          <img src={trainingImg} alt="Tech Fairs Event" />
+          <img src={trainingImg} alt="Publishing Event" />
         </div>
         <div className="content-container">
-          <h2>Publishing (Books & Newsletters)</h2>
+          <h2>Books & Newsletters Publishing</h2>
           <p>
-            Publishing (Books & Newsletters) We empower thinkers, researchers,
-            and learners by providing platforms for knowledge-sharing through
-            publications. Our books & newsletters encapsulate valuable insights,
-            emerging trends, and thought leadership across various fields. By
-            documenting ideas and discoveries, we contribute to a growing
-            community of knowledge-seekers and innovators.
+            We empower thinkers, researchers, and learners by providing
+            platforms for knowledge-sharing through publications. Our books &
+            newsletters encapsulate valuable insights, emerging trends, and
+            thought leadership across various fields. By documenting ideas and
+            discoveries, we contribute to a growing community of
+            knowledge-seekers and innovators.
           </p>
           <button>
             <Link to="/price" className="btn-link">
-              View Price
+              Brochure
             </Link>
           </button>
         </div>
       </div>
 
-      {/* Section 6: Text Left, Image Right */}
-      <div className="section reverse">
+      {/* Section 6 */}
+      <div className="section reverse" id="camps">
         <div className="content-container">
           <h2>Summer & Winter Camps</h2>
           <p>
@@ -142,18 +154,19 @@ const Events = () => {
           </p>
           <button>
             <Link to="/price" className="btn-link">
-              View Price
+              Brochure
             </Link>
           </button>
         </div>
         <div className="image-container">
-          <img src={competitionsImg} alt="Community Engagement Event" />
+          <img src={competitionsImg} alt="Camps Event" />
         </div>
       </div>
 
-      <div className="section">
+      {/* Section 7 */}
+      <div className="section" id="community">
         <div className="image-container">
-          <img src={trainingImg} alt="Tech Fairs Event" />
+          <img src={trainingImg} alt="Community Engagement Event" />
         </div>
         <div className="content-container">
           <h2>Community Engagement & Networking Initiatives</h2>
@@ -167,7 +180,55 @@ const Events = () => {
           </p>
           <button>
             <Link to="/price" className="btn-link">
-              View Price
+              Brochure
+            </Link>
+          </button>
+        </div>
+      </div>
+
+      {/* Section 7 */}
+      <div className="section reverse" id="camps">
+        <div className="content-container">
+          <h2>Awareness Programs</h2>
+          <p>
+            Our awareness programs are designed to educate, inspire, and drive
+            action on critical global and societal issues. Covering diverse
+            topics such as sustainability, digital safety, mental health,
+            financial literacy, ethical AI, and social responsibility, these
+            programs bring together experts, thought leaders, and changemakers
+            to spark meaningful discussions. Through interactive sessions, panel
+            talks, and community-driven initiatives, we aim to empower
+            individuals with knowledge and awareness that lead to impactful
+            change.
+          </p>
+          <button>
+            <Link to="/price" className="btn-link">
+              Brochure
+            </Link>
+          </button>
+        </div>
+        <div className="image-container">
+          <img src={competitionsImg} alt="Camps Event" />
+        </div>
+      </div>
+
+      {/* Section 8 */}
+      <div className="section" id="community">
+        <div className="image-container">
+          <img src={trainingImg} alt="Community Engagement Event" />
+        </div>
+        <div className="content-container">
+          <h2>Custom Events & Corporate Collaborations</h2>
+          <p>
+            Organizations, educational institutions, and communities can
+            leverage our expertise to customize and organize events tailored to
+            their needs. Whether it's corporate training, team-building
+            programs, or specialized educational initiatives, we create
+            impactful and seamless experiences.
+          </p>
+          <button>
+            <Link to="/price" className="btn-link">
+              Brochure
             </Link>
           </button>
         </div>

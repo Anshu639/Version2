@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HomePage from "./components/HomePage";
 import AboutUs from "./Pages/AboutUs";
 import ContactUs from "./Pages/ContactUs";
 import Login from "./Pages/Login";
-import WhyUs from "./Pages/WhyUs"
-import Events from "./Pages/Events"
-
+import WhyUs from "./Pages/WhyUs";
+import Events from "./Pages/Events";
+import OurVision from "./Pages/OurVision";
 
 /* Import your separate Header and Footer components */
 import Header from "./components/Header";
@@ -30,6 +30,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/whyus" element={<WhyUs />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/ourVision" element={<OurVision />} />
       </Routes>
 
       {/* 3) Render the global Footer at the bottom */}
